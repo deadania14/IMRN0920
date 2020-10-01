@@ -53,13 +53,19 @@ function createRectangle() {
 
 function createStairs() {
     console.log("No. 4 membuat tangga")
-
+    console.log("ribet way:")
     for (var j = 1; j < 8; j++) {
 
         for (var i = 1; i <= j; i++) {
             process.stdout.write("#")
         }
         console.log("")
+    }
+    console.log("simple way:")
+    var str = ''
+    for (let i = 0; i < 7; i++) {
+        str += "#";
+        console.log(str);
     }
 }
 
@@ -88,9 +94,9 @@ function papanCatur() {
     }
 }
 //uncomment function you want to test
-loopWhileUp();
+// loopWhileUp();
 // loopWhileDown();
 // loopWithFor();
 // createRectangle();
-// createStairs();
+createStairs();
 // papanCatur();
