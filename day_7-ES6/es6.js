@@ -1,25 +1,21 @@
-golden = () => {
+const golden = () => {
     console.log("this is golden!!")
 }
 console.log("-----------------No. 1-----------------");
 golden();
 
-const newFunction = function literal(f, l) {
-    const firstName = f;
-    const lastName = l;
-    const fullName = f + " " + l;
-    const profile = {
+const newFunction = function literal(firstName, lastName) {
+    return {
         firstName,
         lastName,
-        fullName
+        fullName() {
+            console.log(firstName + " " + lastName)
+            return
+        }
     }
-    return profile;
 }
-
-
-//Driver Code 
 console.log("-----------------No. 2-----------------");
-console.log(newFunction("William", "Imoh"));
+newFunction("William", "Imoh").fullName()
 
 const newObject = {
     firstName: "Harry",
@@ -36,7 +32,8 @@ console.log(firstName, lastName, destination, occupation)
 const west = ["Will", "Chris", "Sam", "Holly"]
 const east = ["Gill", "Brian", "Noel", "Maggie"]
 const combined = [...west, ...east]
-    //Driver Code
+
+//Driver Code
 console.log("-----------------No. 4-----------------");
 console.log(combined)
 
