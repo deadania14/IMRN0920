@@ -15,9 +15,10 @@ console.log(sheep.legs) // 4
 console.log(sheep.cold_blooded) // false
 
 // Code class Ape dan class Frog di sini
-class Ape { // Code class di sini 
+class Ape extends Animal { // Code class di sini 
 
-    constructor() {
+    constructor(name) {
+        super(name)
 
     }
     yell() {
@@ -25,9 +26,10 @@ class Ape { // Code class di sini
     }
 }
 
-class Frog { // Code class di sini 
+class Frog extends Animal { // Code class di sini 
 
-    constructor() {
+    constructor(name) {
+        super(name)
 
     }
     jump() {
@@ -36,9 +38,12 @@ class Frog { // Code class di sini
 }
 var sungokong = new Ape("kera sakti")
 sungokong.yell() // "Auooo"
+console.log(sungokong.name);
+
 
 var kodok = new Frog("buduk")
 kodok.jump() // "hop hop"
+console.log(kodok.name);
 
 class Clock {
     // Code di sini
