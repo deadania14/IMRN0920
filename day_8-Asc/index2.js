@@ -40,6 +40,7 @@ async function callPromise(time, bookarr) {
             .catch(function(sisaWaktu) {
                 return sisaWaktu;
             })
+            .then(console.log("then2"))
     }
 }
 

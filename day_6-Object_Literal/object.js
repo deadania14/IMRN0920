@@ -39,77 +39,89 @@ function checkCart(crd, items, krg) {
     var options = []
     var cart = krg
     var credit = crd;
+    //mencek apakah ada pilihan barang yang harganya dibawah atau sama dengan credit
     for (var i = 0; i < n; i++) {
         if (credit >= (items[i]).harga) {
             options.push((items[i]));
         }
     }
+    //jika tidak ada pilihan, maka cartnya langsung di return
     if (options.length === 0) {
         return cart;
     }
+    //memeriksa harga paling mahal dalam opsi
     var max = options[0].harga;
     var index = 0;
     for (var j = 1; j < options.length; j++) {
         var val = options[j].harga;
         max = (val > max) ? val : max
     }
+    //cek, barang mana yang harganya tertera
     for (var k = 1; k < options.length; k++) {
         if (options[k].harga === max) {
             index = k;
         }
     }
+    //masukkan opsi dengan index yang sesuai ke dalam cart
     cart.push(options[index])
     var kembalian = credit - max;
     return checkCart(kembalian, options, cart)
 }
 
 function shoppingTime(idMember, credit) {
-
+    //cek apakah member atau bukan
     if (idMember === undefined || idMember === "") {
         return "Mohon maaf, toko X hanya berlaku untuk member saja";
     } else {
         var items = {
-            0: {
-                nama: "Sepatu Stacattu",
-                harga: 1500000,
-            },
-            1: {
-                nama: "Baju Zoro",
-                harga: 500000,
-            },
-            2: {
-                nama: "Baju H&N",
-                harga: 250000,
-            },
-            3: {
-                nama: "Sweater Uniklooh",
-                harga: 175000,
-            },
-            4: {
-                nama: "Casing Handphone",
-                harga: 50000,
-            },
-        }
-
+                0: {
+                    nama: "Sepatu Stacattu",
+                    harga: 1500000,
+                },
+                1: {
+                    nama: "Baju Zoro",
+                    harga: 500000,
+                },
+                2: {
+                    nama: "Baju H&N",
+                    harga: 250000,
+                },
+                3: {
+                    nama: "Sweater Uniklooh",
+                    harga: 175000,
+                },
+                4: {
+                    nama: "Casing Handphone",
+                    harga: 50000,
+                },
+            }
+            //mencek berapa jumlah item dalam array
         var n = Object.keys(items).length;
         var options = []
+            //memasukan opsi pilihan barang yang sesuai dengan credit
         for (var i = 0; i < n; i++) {
             if (credit >= (items[i]).harga) {
                 options.push((items[i]));
             }
         }
+        //uang tidak cukup bila tidak ada yang bisa dibeli
         if (options.length === 0) {
             return "Mohon maaf, uang tidak cukup";
         } else {
 
             // return "lanjut";
             var cart = [];
+            //mendapatkan keranjang dengan kesesuaian barang
             var keranjang = checkCart(credit, items, cart);
+
+            //barang tidak boleh dibeli lebih dari 1 masing2 item
             keranjang = [...new Set(keranjang)];
             // console.log(keranjang);
             // console.log(keranjang[0].nama);
             var listPurchased = [];
             // console.log(keranjang.length);
+
+            //mencari kembalian
             var change = credit;
             for (var y = 0; y < keranjang.length; y++) {
                 change = change - keranjang[y].harga;
