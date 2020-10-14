@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import Tugas12 from './tugas/tugas12/App';
+import Tugas13 from './tugas/tugas13/App';
 
 export default function App() {
   return (
@@ -9,7 +9,7 @@ export default function App() {
     //   <Text>Open up App.js to start working on your app!</Text>
     //   <StatusBar style="auto" />
     // </View>
-    <Tugas12 />
+    <Tugas13 />
   );
 }
 
