@@ -1,5 +1,14 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, TextInput, View, Image, TouchableOpacity, Button } from 'react-native';
+import { Platform, 
+  StyleSheet, 
+  Text, 
+  TextInput, 
+  View, 
+  ScrollView,
+  Image, 
+  TouchableOpacity, 
+  Button, 
+  KeyboardAvoidingView } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 const lightBlue =  "#3EC6FF"
@@ -9,56 +18,72 @@ const grayBackground = "#EFEFEF"
 export default class Register extends Component{
     render(){
         return(
-            <View style={styles.container}>
-                <View style={styles.logoBar}>
-                    <Image source={require('../Images/logo2.png')} style={{width: 400, height: 100}}/> 
-                </View>
-                <View style={styles.form}>
-                  <Text style={styles.formLabel}>Username</Text>
-                  <TextInput 
-                    placeholder="Username"
-                    selectionColor={lightBlue}
-                    style={styles.textInput}
-                    />
-                <Text style={styles.formLabel}>Email</Text>
-                  <TextInput 
-                    placeholder="Email"
-                    selectionColor={lightBlue}
-                    style={styles.textInput}
-                    />
-                  <Text style={styles.formLabel}>Password</Text>
-                  <TextInput
-                    secureTextEntry={true}
-                    placeholder="Password"
-                    style={styles.textInput}
-                  />
-                  <Text style={styles.formLabel}>Ulangi Password</Text>
-                  <TextInput
-                    secureTextEntry={true}
-                    placeholder="Ulangi Password"
-                    style={styles.textInput}
-                  />
-                  <View style={styles.buttonAlign}>
-
-                  <TouchableOpacity >  
-                    <Button
-                      title="LOGIN"
-                      color="grey"
-                      style={styles.theButton}
-                      ></Button>
-                  </TouchableOpacity>
-                  <Text style={{}}>atau</Text>
-                  <TouchableOpacity>  
-                    <Button
-                      title="REGISTER"
-                      color="#003366"
-                      ></Button>
-                  </TouchableOpacity>
+          <KeyboardAvoidingView
+            behavior= {Platform.OS=="ios"? "padding" : "height"}
+            style= {styles.container}
+          >
+            <ScrollView>
+              <View>
+                  <View style={styles.logoBar}>
+                      <Image source={require('../Images/logo2.png')} style={{width: 400, height: 100}}/> 
                   </View>
-                </View>
+                  <Text style={styles.loginText}>LOGIN</Text>
+                  <View style={styles.form}>
+                    <Text style={styles.formLabel}>Username</Text>
+                    <TextInput 
+                      placeholder="Username"
+                      selectionColor={lightBlue}
+                      style={styles.textInput}
+                      />
+                  </View>
+                  <View style={styles.form}>
+                    <Text style={styles.formLabel}>Email</Text>
+                    <TextInput 
+                      placeholder="Email"
+                      selectionColor={lightBlue}
+                      style={styles.textInput}
+                      />
+                  </View>
+                  <View style={styles.form}>
+                    <Text style={styles.formLabel}>Password</Text>
+                    <TextInput
+                      secureTextEntry={true}
+                      placeholder="Password"
+                      style={styles.textInput}
+                      />
+                  </View>
+                  <View style={styles.form}>
+                    <Text style={styles.formLabel}>Ulangi Password</Text>
+                    <TextInput
+                      secureTextEntry={true}
+                      placeholder="Ulangi Password"
+                      style={styles.textInput}
+                      />
+                  </View>
 
-            </View>
+                    <View style={styles.buttonAlign}>
+                      <TouchableOpacity >  
+                        <Button
+                          title="LOGIN"
+                          color="grey"
+                          style={styles.theButton}
+                          ></Button>
+                      </TouchableOpacity>
+                    </View>
+                    <Text style={styles.atau}>ATAU</Text>
+                    <View style={styles.buttonAlign}>
+                      <TouchableOpacity>  
+                        <Button
+                          title="REGISTER"
+                          color="#003366"
+                          ></Button>
+                      </TouchableOpacity>
+                    </View>
+                  </View>
 
+
+            </ScrollView>
+          </KeyboardAvoidingView>
 
         )
     }
@@ -75,28 +100,42 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         marginBottom:0
     },
+    loginText:{
+      fontSize:24,
+      textAlign:"center",
+      color:darkBlue,
+      marginVertical:20
+    },
     form:{
-        marginTop: 50,
-        padding: 20,
-        backgroundColor: '#ffffff',
-        flexDirection: "column",
-        justifyContent:"space-between"
+        marginHorizontal:30,
+        marginVertical:5,
+        alignContent: "center",
     },
     formLabel:{
-      paddingLeft: 20,
+      color:darkBlue
 
     },
     textInput: {
-      margin: 15,
-      padding:5,
+      padding:10,
       height: 40,
       borderColor: "#003366",
       borderWidth: 1,
     },
     buttonAlign: {
       justifyContent: "center",
-      flexDirection: "column",
+      // flexDirection: "column",
+      backgroundColor: "grey",
       alignItems: "center",
+      padding:10,
+      borderRadius:15,
+      marginHorizontal:30,
+      marginBottom:10
     },
+    atau: {
+
+      fontSize:20, 
+      color: lightBlue, 
+      alignItems:"center"
+    }
 })
 
