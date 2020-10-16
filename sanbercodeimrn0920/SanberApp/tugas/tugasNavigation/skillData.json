@@ -1,0 +1,65 @@
+{
+    "items":[
+      {
+        "id": 1,
+        "skillName": "React Native",
+        "category": "Library",
+        "categoryName": "Framework / Library",
+        "logoUrl": "https://www.pinclipart.com/picdir/big/394-3949896_atom-free-vector-icon-designed-by-freepik-react.png",
+        "iconType": "MaterialCommunityIcons",
+        "iconName": "react",
+        "percentageProgress": "50%"
+      },
+      {
+        "id": 2,
+        "skillName": "Laravel",
+        "category": "Library",
+        "categoryName": "Framework / Library",
+        "logoUrl": "https://cdn.freebiesupply.com/logos/large/2x/laravel-1-logo-png-transparent.png",
+        "iconType": "MaterialCommunityIcons",
+        "iconName": "laravel",
+        "percentageProgress": "100%"
+      },
+      {
+        "id": 3,
+        "skillName": "JavaScript",
+        "category": "Language",
+        "categoryName": "Bahasa Pemrograman",
+        "logoUrl": "https://e7.pngegg.com/pngimages/130/641/png-clipart-javascript-node-js-computer-icons-logo-application-software-javascript-icon-text-logo.png",
+        "iconType": "MaterialCommunityIcons",
+        "iconName": "language-javascript",
+        "percentageProgress": "30%"
+      },
+      {
+        "id": 4,
+        "skillName": "Python",
+        "category": "Language",
+        "categoryName": "Bahasa Pemrograman",
+        "logoUrl": "https://cdn3.iconfinder.com/data/icons/logos-and-brands-3/512/267_Python-512.png",
+        "iconType": "MaterialCommunityIcons",
+        "iconName": "language-python",
+        "percentageProgress": "70%"
+      },
+      {
+        "id": 5,
+        "skillName": "Git",
+        "category": "Technology",
+        "categoryName": "Teknologi",
+        "logoUrl": "https://git-scm.com/images/logos/downloads/Git-Icon-Black.png",
+        "iconType": "MaterialCommunityIcons",
+        "iconName": "git",
+        "percentageProgress": "75%"
+      },
+      {
+        "id": 6,
+        "skillName": "Gitlab",
+        "category": "Technology",
+        "categoryName": "Teknologi",
+        "logoUrl": "https://img.icons8.com/ios/452/gitlab.png",
+        "iconType": "MaterialCommunityIcons",
+        "iconName": "gitlab",
+        "percentageProgress": "60%"
+      }
+    ]
+  }
+  
