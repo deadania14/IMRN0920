@@ -1,7 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import App2 from './tugas/tugasNavigation/index';
+import App2 from './quiz';
+// import App2 from './tugas/tugasNavigation/index';
 // import Tugas14 from './tugas/tugas14/App';
 
 export default function App() {
