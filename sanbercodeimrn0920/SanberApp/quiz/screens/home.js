@@ -4,7 +4,8 @@ import { StyleSheet,
     Text,
     View,
     Image,
-ScrollView } from 'react-native'
+ScrollView,
+FlatList } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const Home = ()=>(
@@ -23,21 +24,20 @@ const Home = ()=>(
             <Image source={require('../images/Slider.png')} style={{width:372, height: 190, margin: 10, borderRadius:5}}/>
             {/* <View style={styles.tabBar}>
                 <TouchableOpacity style={styles.tabItem}>  
-                    <Image source={require('../images/logoSplash.PNG')} style={{width:25}}/>
-                    <Icon name="home" size={25} color={"#F77866"}/>
-                    <Text style={styles.tabTitle, {color:"#727C8E"}}>Men</Text>
+                <Icon name="home" size={25} color={"#F77866"}/>
+                <Text style={styles.tabTitle, {color:"#727C8E"}}>Men</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.tabItem}>  
-                    <Icon name="cart" size={25} color="#727C8E"/>
-                    <Text style={styles.tabTitle, {color:"#727C8E"}}>Women</Text>
+                <Icon name="cart" size={25} color="#727C8E"/>
+                <Text style={styles.tabTitle, {color:"#727C8E"}}>Women</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.tabItem}>  
-                    <Icon name="message" size={25} color="#727C8E"/>
-                    <Text style={styles.tabTitle, {color:"#727C8E"}}>Kids</Text>
+                <Icon name="message" size={25} color="#727C8E"/>
+                <Text style={styles.tabTitle, {color:"#727C8E"}}>Kids</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.tabItem}>  
-                    <Icon name="account" size={25} color="#727C8E"/>
-                    <Text style={styles.tabTitle, {color:"#727C8E"}}>More</Text>
+                <Icon name="account" size={25} color="#727C8E"/>
+                <Text style={styles.tabTitle, {color:"#727C8E"}}>More</Text>
                 </TouchableOpacity>
             </View> */}
             <ScrollView>
@@ -47,6 +47,52 @@ const Home = ()=>(
                     <Text style={styles.fTextA}>All</Text>
                     <Icon name="chevron-right" size={25} color={"#727CBE"}/>
                 </View>
+                <View style={styles.itemsFlash}>
+                    <View style={styles.itemBFlash}>
+                        <Image source={require('../images/Slider.png')} style={{width:110, height:110}}/>
+                        <View>
+                            <Text style={styles.iTitleFlash}>Name of item</Text>
+                            <Text style={styles.iPriceFlash}>$10.0</Text>
+                        </View>
+                    </View>
+                    <View style={styles.itemBFlash}>
+                        <Image source={require('../images/Slider.png')} style={{width:110, height:110}}/>
+                        <View>
+                            <Text style={styles.iTitleFlash}>Name of item</Text>
+                            <Text style={styles.iPriceFlash}>$10.0</Text>
+                        </View>
+                    </View>
+                    <View style={styles.itemBFlash}>
+                        <Image source={require('../images/Slider.png')} style={{width:110, height:110}}/>
+                        <View>
+                            <Text style={styles.iTitleFlash}>Name of item</Text>
+                            <Text style={styles.iPriceFlash}>$10.0</Text>
+                        </View>
+                    </View>
+                </View>
+                <View style={styles.flash}>
+                    <Text style={styles.fText}>New Product</Text>
+                    <Text style={styles.fTextA}>All</Text>
+                    <Icon name="chevron-right" size={25} color={"#727CBE"}/>
+                </View>
+                <View style={styles.items}>
+                    <View style={styles.itemB}>
+                        <Image source={require('../images/Slider.png')} style={{width:170, height:170}}/>
+                        <View>
+                            <Text style={styles.iTitle}>Name of item</Text>
+                            <Text style={styles.iPrice}>$10.0</Text>
+                        </View>
+                    </View>
+                    <View style={styles.itemB}>
+                    <Image source={require('../images/Slider.png')} style={{width:170, height:170}}/>
+                        <View>
+                            <Text style={styles.iTitle}>Name of item</Text>
+                            <Text style={styles.iPrice}>$10.0</Text>
+                        </View>
+                    </View>
+                </View>
+
+
             </ScrollView>
 
         </View>
@@ -124,6 +170,47 @@ const styles = StyleSheet.create({
       tabTitle:{
         fontSize:11,
         color: '#3C3C3C'
+      },
+      itemsFlash:{
+        flexDirection:"row"
+      },
+      itemBFlash:{
+          marginHorizontal: 10,
+          borderRadius:5,
+          borderColor:"#727C8E",
+          borderWidth:0.5
+      },
+      iTitleFlash:{
+          paddingHorizontal:10,
+          paddingVertical:5,
+          fontSize:12
+      },
+      iPriceFlash:{
+          paddingHorizontal:10,
+          paddingVertical:5,
+          fontSize:10
+      },
+      
+      items:{
+        flexDirection:"row",
+        flexWrap: 'wrap'
+
+      },
+      itemB:{
+          marginHorizontal: 10,
+          borderRadius:5,
+          borderColor:"#727C8E",
+          borderWidth:0.5
+      },
+      iTitle:{
+          paddingHorizontal:10,
+          paddingVertical:5,
+          fontSize:12
+      },
+      iPrice:{
+          paddingHorizontal:10,
+          paddingVertical:5,
+          fontSize:10
       }
 })
 
