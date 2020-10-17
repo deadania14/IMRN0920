@@ -154,5 +154,30 @@
 // recapScores(data);
 // // console.log(data[0].length);
 
-var number = 85.66666666666667;
-console.log(number.toFixed(1));
+// var number = 85.66666666666667;
+// console.log(number.toFixed(1));
+
+// if(5+2 === 7 && 4>5 || "Hi"==="Hi"){
+//     console.log("true");
+// }else {
+//     console.log("false");
+// }
+
+// let sum = 0 
+// for (const i= 2; i <= 6;i++){
+//     sum +=i;
+// }
+// console.log(sum);
+
+// const propKey = "field 12";
+// const person = {
+//     [propKey]:"Abduh"
+// }
+// console.log(person["field 12"]);
+
+const daftarHobi = ['Olahraga', 'Makan', 'Ngoding'];
+let hobiFavorit;
+for(const hobi of daftarHobi){
+    hobiFavorit = hobi;
+}
+console.log(hobiFavorit);
